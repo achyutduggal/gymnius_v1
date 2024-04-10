@@ -11,7 +11,10 @@ import 'Screens/login_screen.dart';
 import 'Screens/signup_screen.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(create: (context) => StringData(),child: MaterialApp(debugShowCheckedModeBanner: false, home: MyApp())));
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(ChangeNotifierProvider(
+      create: (context) => StringData(),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: MyApp())));
 }
 
 class MyApp extends StatefulWidget {
@@ -29,12 +32,11 @@ class _MyAppState extends State<MyApp> {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
-        ImagePickerScreen.id : (context) => ImagePickerScreen(),
-        CalorieTracker.id : (context) => CalorieTracker(),
+        ImagePickerScreen.id: (context) => ImagePickerScreen(),
+        CalorieTracker.id: (context) => CalorieTracker(),
         HomeScreen.id: (context) => HomeScreen(),
         CalorieTrackerScreen.id: (context) => CalorieTrackerScreen(),
         DietScreen.id: (context) => DietScreen(),
-
       },
     );
   }
